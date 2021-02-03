@@ -36,5 +36,17 @@ if (options.ignore) {
   }
 }
 
-const { list, set, map } = parse(excludeDeps);
-console.log(list, set, map)
+const { list, map, packageName } = parse(excludeDeps);
+
+if (list.length) {
+  console.log()
+  console.log(packageName)
+  for (let item of list) {
+    console.log('|')
+    console.log('|--', item);
+    map.get(item).forEach(item => {
+      console.log('|   |')
+      console.log('|   |--', item);
+    });
+  }
+}
