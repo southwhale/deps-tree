@@ -1,0 +1,23 @@
+{
+  "name": "deps-tree",
+  "version": "0.0.1",
+  "description": "分析项目dependencies依赖树图",
+  "main": "./lib/depsParser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamweilee/deps-tree.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamweilee/deps-tree/issues"
+  },
+  "homepage": "https://github.com/iamweilee/deps-tree#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^7.0.0"
+  }
+}
