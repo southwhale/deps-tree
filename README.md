@@ -17,3 +17,126 @@
     const { list, set, map, packageName } = parse();
     ...
 ```
+
+## demo result
+
+```
+atm
+|
+|-- accepts
+|   |
+|   |-- mime-types
+|   |
+|   |-- negotiator
+|
+|-- after
+|
+|-- arraybuffer.slice
+|
+|-- axios
+|   |
+|   |-- follow-redirects
+|
+|-- backo2
+|
+|-- base64-arraybuffer
+|
+|-- base64id
+|
+|-- better-assert
+|   |
+|   |-- callsite
+|
+|-- blob
+|
+|-- callsite
+|
+|-- component-bind
+|
+|-- component-emitter
+|
+|-- component-inherit
+|
+|-- cookie
+|
+|-- core-js
+|
+|-- cron
+|   |
+|   |-- moment-timezone
+|
+|-- date-format
+|
+|-- debug
+|   |
+|   |-- ms
+|
+|-- engine.io
+|   |
+|   |-- accepts
+|   |
+|   |-- base64id
+|   |
+|   |-- cookie
+|   |
+|   |-- debug
+|   |
+|   |-- engine.io-parser
+|   |
+|   |-- ws
+|
+|-- engine.io-client
+|   |
+|   |-- component-emitter
+|   |
+|   |-- component-inherit
+|   |
+|   |-- debug
+|   |
+|   |-- engine.io-parser
+|   |
+|   |-- has-cors
+|   |
+|   |-- indexof
+|   |
+|   |-- parseqs
+|   |
+|   |-- parseuri
+|   |
+|   |-- ws
+|   |
+|   |-- xmlhttprequest-ssl
+|   |
+|   |-- yeast
+|
+|-- engine.io-parser
+|   |
+|   |-- after
+|   |
+|   |-- arraybuffer.slice
+|   |
+|   |-- base64-arraybuffer
+|   |
+|   |-- blob
+|   |
+|   |-- has-binary2
+|
+|-- eventemitter3
+|
+|-- flatted
+|
+|-- follow-redirects
+|   |
+|   |-- debug
+|
+|-- fs-extra
+|   |
+|   |-- graceful-fs
+|   |
+|   |-- jsonfile
+|   |
+|   |-- universalify
+|
+|-- futurectp
+```
+

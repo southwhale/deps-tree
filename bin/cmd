@@ -36,17 +36,21 @@ if (options.ignore) {
   }
 }
 
-const { list, map, packageName } = parse(excludeDeps);
+const result = parse(excludeDeps);
 
-if (list.length) {
-  console.log()
-  console.log(packageName)
-  for (let item of list) {
-    console.log('|')
-    console.log('|--', item);
-    map.get(item).forEach(item => {
-      console.log('|   |')
-      console.log('|   |--', item);
-    });
+if (result) {
+  const { list, map, packageName } = result;
+  if (list.length) {
+    console.log()
+    console.log(packageName)
+    for (let item of list) {
+      console.log('|')
+      console.log('|--', item);
+      const value = map.get(item);
+      value && value.forEach(item => {
+        console.log('|   |')
+        console.log('|   |--', item);
+      });
+    }
   }
 }
