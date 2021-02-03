@@ -1,6 +1,6 @@
 {
   "name": "tree-deps",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "分析项目dependencies依赖树图",
   "main": "./lib/depsParser.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^7.0.0"
+  },
+  "bin": {
+    "tree-deps": "./bin/cmd"
   }
 }
