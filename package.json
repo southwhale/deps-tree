@@ -1,6 +1,6 @@
 {
   "name": "tree-deps",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "分析项目dependencies依赖树图",
   "main": "./lib/depsParser.js",
   "scripts": {
