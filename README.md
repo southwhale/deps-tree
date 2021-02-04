@@ -21,122 +21,289 @@
 ## demo result
 
 ```
-atm
+node-proxymock
+|- body-parser
+|   |- bytes
+|   |- content-type
+|   |- debug
+|   |   |- ms
+|   |
+|   |- depd
+|   |- http-errors
+|   |   |- depd
+|   |   |- inherits
+|   |   |- setprototypeof
+|   |   |- statuses
+|   |   |- toidentifier
+|   |
+|   |- iconv-lite
+|   |   |- safer-buffer
+|   |
+|   |- on-finished
+|   |   |- ee-first
+|   |
+|   |- qs
+|   |- raw-body
+|   |   |- bytes
+|   |   |- http-errors
+|   |   |   |- depd
+|   |   |   |- inherits
+|   |   |   |- setprototypeof
+|   |   |   |- statuses
+|   |   |   |- toidentifier
+|   |   |
+|   |   |- iconv-lite
+|   |   |   |- safer-buffer
+|   |   |
+|   |   |- unpipe
+|   |
+|   |- type-is
+|       |- media-typer
+|       |- mime-types
+|           |- mime-db
 |
-|-- accepts
+|- chalk
+|   |- ansi-styles
+|   |   |- @types/color-name
+|   |   |- color-convert
+|   |       |- color-name
 |   |
-|   |-- mime-types
-|   |
-|   |-- negotiator
+|   |- supports-color
+|       |- has-flag
 |
-|-- after
+|- cors
+|   |- object-assign
+|   |- vary
 |
-|-- arraybuffer.slice
+|- express
+|   |- accepts
+|   |   |- mime-types
+|   |   |   |- mime-db
+|   |   |
+|   |   |- negotiator
+|   |
+|   |- array-flatten
+|   |- body-parser
+|   |   |- bytes
+|   |   |- content-type
+|   |   |- debug
+|   |   |   |- ms
+|   |   |
+|   |   |- depd
+|   |   |- http-errors
+|   |   |   |- depd
+|   |   |   |- inherits
+|   |   |   |- setprototypeof
+|   |   |   |- statuses
+|   |   |   |- toidentifier
+|   |   |
+|   |   |- iconv-lite
+|   |   |   |- safer-buffer
+|   |   |
+|   |   |- on-finished
+|   |   |   |- ee-first
+|   |   |
+|   |   |- qs
+|   |   |- raw-body
+|   |   |   |- bytes
+|   |   |   |- http-errors
+|   |   |   |   |- depd
+|   |   |   |   |- inherits
+|   |   |   |   |- setprototypeof
+|   |   |   |   |- statuses
+|   |   |   |   |- toidentifier
+|   |   |   |
+|   |   |   |- iconv-lite
+|   |   |   |   |- safer-buffer
+|   |   |   |
+|   |   |   |- unpipe
+|   |   |
+|   |   |- type-is
+|   |       |- media-typer
+|   |       |- mime-types
+|   |           |- mime-db
+|   |
+|   |- content-disposition
+|   |   |- safe-buffer
+|   |
+|   |- content-type
+|   |- cookie
+|   |- cookie-signature
+|   |- debug
+|   |   |- ms
+|   |
+|   |- depd
+|   |- encodeurl
+|   |- escape-html
+|   |- etag
+|   |- finalhandler
+|   |   |- debug
+|   |   |   |- ms
+|   |   |
+|   |   |- encodeurl
+|   |   |- escape-html
+|   |   |- on-finished
+|   |   |   |- ee-first
+|   |   |
+|   |   |- parseurl
+|   |   |- statuses
+|   |   |- unpipe
+|   |
+|   |- fresh
+|   |- merge-descriptors
+|   |- methods
+|   |- on-finished
+|   |   |- ee-first
+|   |
+|   |- parseurl
+|   |- path-to-regexp
+|   |- proxy-addr
+|   |   |- forwarded
+|   |   |- ipaddr.js
+|   |
+|   |- qs
+|   |- range-parser
+|   |- safe-buffer
+|   |- send
+|   |   |- debug
+|   |   |   |- ms
+|   |   |
+|   |   |- depd
+|   |   |- destroy
+|   |   |- encodeurl
+|   |   |- escape-html
+|   |   |- etag
+|   |   |- fresh
+|   |   |- http-errors
+|   |   |   |- depd
+|   |   |   |- inherits
+|   |   |   |- setprototypeof
+|   |   |   |- statuses
+|   |   |   |- toidentifier
+|   |   |
+|   |   |- mime
+|   |   |- ms
+|   |   |- on-finished
+|   |   |   |- ee-first
+|   |   |
+|   |   |- range-parser
+|   |   |- statuses
+|   |
+|   |- serve-static
+|   |   |- encodeurl
+|   |   |- escape-html
+|   |   |- parseurl
+|   |   |- send
+|   |       |- debug
+|   |       |   |- ms
+|   |       |
+|   |       |- depd
+|   |       |- destroy
+|   |       |- encodeurl
+|   |       |- escape-html
+|   |       |- etag
+|   |       |- fresh
+|   |       |- http-errors
+|   |       |   |- depd
+|   |       |   |- inherits
+|   |       |   |- setprototypeof
+|   |       |   |- statuses
+|   |       |   |- toidentifier
+|   |       |
+|   |       |- mime
+|   |       |- ms
+|   |       |- on-finished
+|   |       |   |- ee-first
+|   |       |
+|   |       |- range-parser
+|   |       |- statuses
+|   |
+|   |- setprototypeof
+|   |- statuses
+|   |- type-is
+|   |   |- media-typer
+|   |   |- mime-types
+|   |       |- mime-db
+|   |
+|   |- utils-merge
+|   |- vary
 |
-|-- axios
+|- inquirer
+|   |- ansi-escapes
+|   |   |- type-fest
 |   |
-|   |-- follow-redirects
+|   |- chalk
+|   |   |- ansi-styles
+|   |   |   |- @types/color-name
+|   |   |   |- color-convert
+|   |   |       |- color-name
+|   |   |
+|   |   |- supports-color
+|   |       |- has-flag
+|   |
+|   |- cli-cursor
+|   |   |- restore-cursor
+|   |       |- onetime
+|   |       |   |- mimic-fn
+|   |       |
+|   |       |- signal-exit
+|   |
+|   |- cli-width
+|   |- external-editor
+|   |   |- chardet
+|   |   |- iconv-lite
+|   |   |   |- safer-buffer
+|   |   |
+|   |   |- tmp
+|   |       |- os-tmpdir
+|   |
+|   |- figures
+|   |   |- escape-string-regexp
+|   |
+|   |- lodash
+|   |- mute-stream
+|   |- run-async
+|   |- rxjs
+|   |   |- tslib
+|   |
+|   |- string-width
+|   |   |- emoji-regex
+|   |   |- is-fullwidth-code-point
+|   |   |- strip-ansi
+|   |       |- ansi-regex
+|   |
+|   |- strip-ansi
+|   |   |- ansi-regex
+|   |
+|   |- through
 |
-|-- backo2
+|- lodash
+|- log4js
+|   |- date-format
+|   |- debug
+|   |   |- ms
+|   |
+|   |- flatted
+|   |- rfdc
+|   |- streamroller
+|       |- date-format
+|       |- debug
+|       |   |- ms
+|       |
+|       |- fs-extra
+|           |- graceful-fs
+|           |- jsonfile
+|           |- universalify
 |
-|-- base64-arraybuffer
-|
-|-- base64id
-|
-|-- better-assert
-|   |
-|   |-- callsite
-|
-|-- blob
-|
-|-- callsite
-|
-|-- component-bind
-|
-|-- component-emitter
-|
-|-- component-inherit
-|
-|-- cookie
-|
-|-- core-js
-|
-|-- cron
-|   |
-|   |-- moment-timezone
-|
-|-- date-format
-|
-|-- debug
-|   |
-|   |-- ms
-|
-|-- engine.io
-|   |
-|   |-- accepts
-|   |
-|   |-- base64id
-|   |
-|   |-- cookie
-|   |
-|   |-- debug
-|   |
-|   |-- engine.io-parser
-|   |
-|   |-- ws
-|
-|-- engine.io-client
-|   |
-|   |-- component-emitter
-|   |
-|   |-- component-inherit
-|   |
-|   |-- debug
-|   |
-|   |-- engine.io-parser
-|   |
-|   |-- has-cors
-|   |
-|   |-- indexof
-|   |
-|   |-- parseqs
-|   |
-|   |-- parseuri
-|   |
-|   |-- ws
-|   |
-|   |-- xmlhttprequest-ssl
-|   |
-|   |-- yeast
-|
-|-- engine.io-parser
-|   |
-|   |-- after
-|   |
-|   |-- arraybuffer.slice
-|   |
-|   |-- base64-arraybuffer
-|   |
-|   |-- blob
-|   |
-|   |-- has-binary2
-|
-|-- eventemitter3
-|
-|-- flatted
-|
-|-- follow-redirects
-|   |
-|   |-- debug
-|
-|-- fs-extra
-|   |
-|   |-- graceful-fs
-|   |
-|   |-- jsonfile
-|   |
-|   |-- universalify
-|
-|-- futurectp
+|- node-cert
+|- portfinder
+    |- async
+    |   |- lodash
+    |
+    |- debug
+    |   |- ms
+    |
+    |- mkdirp
+        |- minimist
 ```
 
