@@ -2,22 +2,10 @@
 
 'use strict';
 
-const colors  = require('colors');
 const { program } = require('commander');
 const { parse } = require('../lib/depsParser');
-
+const { Tree, Node, printRow } = require('../lib/utils');
 const version = require('../package.json').version;
-
-const COLOR_THEME = {
-  error  : 'red',
-  info   : 'blue',
-  data   : 'grey',
-  header : 'blue',
-  warn   : 'yellow',
-  em     : 'magenta'
-};
-
-colors.setTheme(COLOR_THEME);
 
 program
 .version(version)
@@ -39,18 +27,42 @@ if (options.ignore) {
 const result = parse(excludeDeps);
 
 if (result) {
-  const { list, map, packageName } = result;
-  if (list.length) {
+  const { list, map, packageName, rootSet, rootList } = result;
+  if (rootList.length) {
     console.log()
     console.log(packageName)
-    for (let item of list) {
-      console.log('|')
+    const tree = new Tree(packageName);
+    rootList.forEach((item, index, rawList) => {
       console.log('|--', item);
-      const value = map.get(item);
-      value && value.forEach(item => {
-        console.log('|   |')
-        console.log('|   |--', item);
-      });
-    }
+      const packageNames = map[item];
+      const node = new Node(item);
+      node.isLast = index === rawList.length - 1;
+      tree.addNode(node);
+    
+      printTree(node, packageNames);
+      function printTree(parentNode, names) {
+        names.forEach((name, index, rawList) => {
+          const foundTargetNode = tree.findAncestorNode(parentNode, name); // 回溯是为了避免陷入循环依赖
+          if (foundTargetNode) {
+            return;
+          }
+          
+          const subNames = map[name];
+          const childNode = new Node(name);
+          parentNode.addChild(childNode);
+          const isLast = index === rawList.length - 1; // 是否本层级最后一个节点
+          childNode.isLast = isLast;
+          
+          printRow(parentNode, name);
+          
+          if (subNames && subNames.length) {
+            printTree(childNode, subNames);
+          }
+          else if (isLast) {
+            parentNode && printRow(parentNode, name, false);
+          }
+        });
+      }
+    })
   }
 }
