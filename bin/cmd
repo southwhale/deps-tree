@@ -33,7 +33,7 @@ if (result) {
     console.log(packageName)
     const tree = new Tree(packageName);
     rootList.forEach((item, index, rawList) => {
-      console.log('|--', item);
+      console.log('|-', item);
       const packageNames = map[item];
       const node = new Node(item);
       node.isLast = index === rawList.length - 1;
@@ -41,7 +41,7 @@ if (result) {
     
       printTree(node, packageNames);
       function printTree(parentNode, names) {
-        names.forEach((name, index, rawList) => {
+        names && names.forEach((name, index, rawList) => {
           const foundTargetNode = tree.findAncestorNode(parentNode, name); // 回溯是为了避免陷入循环依赖
           if (foundTargetNode) {
             return;
