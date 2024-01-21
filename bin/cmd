@@ -24,7 +24,7 @@ if (options.ignore) {
   }
 }
 
-const result = parse(excludeDeps);
+const result = parse({ excludeRootDeps: excludeDeps });
 
 if (result) {
   const { list, map, packageName, rootSet, rootList } = result;
